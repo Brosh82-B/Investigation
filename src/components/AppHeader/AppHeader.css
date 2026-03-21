@@ -1,0 +1,21 @@
+.header {
+  background-color: #632c91;
+  text-align: center;
+}
+
+.logo-container img {
+  max-height: 10vh;
+}
+
+.logo-container {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.image-container {
+  display: grid;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+}
