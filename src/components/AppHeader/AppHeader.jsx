@@ -5,7 +5,7 @@ function AppHeader() {
     <header className="header">
       <div className="logo-container">
         <div className="image-container" style={{ margin: "0 auto" }}>
-          <p>כתיבת תחקיר</p>
+          <p>תחקירים 846</p>
           <img src={givatiLogo} alt={givatiLogo} />
         </div>
       </div>

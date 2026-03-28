@@ -15,8 +15,13 @@ function App() {
   const formConfig = [
     { name: "fullName", label: "שם מלא", type: "text", defaultValue: "" },
     { name: "title", label: "כותרת", type: "text", defaultValue: "" },
-    { name: "date", label: "מועד האירוע", type: "date", defaultValue: "" },
-    { name: "time", label: "שעת האירוע", type: "text", defaultValue: "" },
+    {
+      name: "date",
+      label: "(תאריך ושעה) מועד האירוע",
+      type: "date",
+      defaultValue: "",
+    },
+    { name: "time", label: "שעת האירוע", type: "text", defaultValue: " " },
     { name: "location", label: "מקום", type: "text", defaultValue: "" },
     { name: "unit", label: "יחידה", type: "text", defaultValue: "" },
     {
@@ -38,6 +43,12 @@ function App() {
       defaultValue: "",
     },
     {
+      name: "participants",
+      label: "משתתפים בתחקיר (שם, תפקיד, מספר אישי)",
+      type: "textarea",
+      defaultValue: "",
+    },
+    {
       name: "background",
       label: "ממצאים - רקע",
       type: "textarea",
@@ -56,8 +67,20 @@ function App() {
       defaultValue: "",
     },
     {
-      name: "conclusions",
-      label: "מסקנות",
+      name: "factors",
+      label: "גורמים לאירוע",
+      type: "textarea",
+      defaultValue: "",
+    },
+    {
+      name: "errors1",
+      label: "תקלות",
+      type: "textarea",
+      defaultValue: "",
+    },
+    {
+      name: "errors2",
+      label: "שגיאות",
       type: "textarea",
       defaultValue: "",
     },
@@ -67,6 +90,18 @@ function App() {
       type: "textarea",
       defaultValue: "",
     },
+    {
+      name: "recommendations",
+      label: "המלצות",
+      type: "textarea",
+      defaultValue: "",
+    },
+    {
+      name: "summary",
+      label: "סיכום מפקד",
+      type: "textarea",
+      defaultValue: " ",
+    },
     // {
     //   name: "background",
     //   label: "חתימה",
@@ -74,13 +109,13 @@ function App() {
     //   defaultValue: "",
     // },
 
-    // {
-    //   name: "witnesses",
-    //   label: "האם היו עדים לאירוע",
-    //   type: "select",
-    //   options: ["כן", "לא"],
-    //   defaultValue: "לא",
-    // },
+    {
+      name: "WORD_PDF",
+      label: "WORD או PDF?",
+      type: "select",
+      options: ["WORD", "PDF"],
+      defaultValue: "לא",
+    },
   ];
   return (
     <div className="App">
@@ -88,7 +123,7 @@ function App() {
       <div className="main">
         <MainForm
           formConfig={formConfig}
-          scriptUrl="https://script.google.com/macros/s/AKfycbyETJhNKFTclNCkBpdc9anrHuCklrw-0WofpyCmyYcNkm2TSsUaDjIwxxef6z1ws6n9xw/exec"
+          scriptUrl="https://script.google.com/macros/s/AKfycbyPW_DnDXKy6qlmOPst4MWdMkVv9KYhA07I1EC3OEdYSHaCFb5FGnrM03gQlXnfLkyZLg/exec"
         />
       </div>
       {/* <form onSubmit={handleSubmit}>

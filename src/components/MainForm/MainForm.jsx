@@ -177,8 +177,13 @@ const MainForm = ({
       });
 
       setLoading(false);
-
-      window.location.href = response.data.pdfURL;
+      console.log("PDF URL:", response, formState);
+      if (formState.WORD_PDF === "PDF") {
+        window.location.href = response.data.pdfURL;
+      } else {
+        window.location.href = response.data.wordURL;
+      }
+      // window.location.href = response.data.pdfURL;
       NotificationManager.success("הקובץ ירד תוך מספר שניות", "המתן", 3000);
     } catch (error) {
       console.error(error);
@@ -187,7 +192,7 @@ const MainForm = ({
     }
   };
 
-  const topMessage = `חיילים יקרים שימו לב,
+  const topMessage = `שימו לב,
 לאחר מילוי התשובות, הקובץ יורד כ-pdf.
 יש לכתוב את התחקיר בצורה ממוקדת ועניינית.`;
 
